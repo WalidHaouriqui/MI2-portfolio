@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Schaakbord</title>
+    <meta name="description" content="An interactive getting started guide for Brackets.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h2>Les 2: Schaakbord</h2>
+
+    <div class="schaakbord">
+        <script>
+            var x=0;
+            var y=0;
+        
+            for(y=0; y<4; y++)
+            {
+                for(x=0; x<4; x++)
+                {
+                document.write("<p class=schakelwhite></p>");
+                document.write("<p class=schakelblack></p>");
+                }
+                
+                 for(x=0; x<4; x++)
+                {
+                document.write("<p class=schakelblack></p>");
+                document.write("<p class=schakelwhite></p>");
+                }
+            
+            
+            }
+        </script>
+    </div>
+    <footer>
+        <p>Copyright Walid HAOURIQUI</p>
+    </footer>
+</body>
+
+</html>
