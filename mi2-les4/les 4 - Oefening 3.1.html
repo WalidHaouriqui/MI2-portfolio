@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<!-- Walid HAOURIQUI -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Oefening 3.1 - Les 4</title>
+
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.1.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+
+    <script>
+        
+       $(document).ready(function (){
+            //  Laatste li verwijderen
+        var aantal = $("li").length;
+           var plaats = $("li").last().detach(); 
+           var laatsteLijn = $(" li:nth-child(3n) ").text();
+           
+       $("li").first().before(plaats);
+        $("body").append ("Aantal plaatsen : " + aantal );
+        	$("body").prepend("Aantel plaatsen: " + aantal);
+           $("body").last().after( "Weer 3:" + laatsteLijn);
+           });
+    </script>
+
+</head>
+
+<body>
+    
+
+
+    <li> Brussel 20°C </li>
+    <li> Antwerpen 15°C</li>
+    <li> Barcelona 25°C </li>
+    <li> Berlijn 14°C </li>
+    <li> London 11°C </li>
+
+</body>
+
+</html>
