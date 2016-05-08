@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Walid HAOURIQUI</title>
+
+
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.1.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+
+
+
+</head>
+<style>
+</style>
+<script>
+    $(document).ready(function(){
+        $("#kleiner").click(function(){
+            var grootte = parseFloat($("p").css("font-size"));
+            $("p").css("font-size",((.8 * grootte)>3?(.8*grootte):3) + "px");
+            
+        });
+        
+           $("#groter").click(function(){
+            var grootte = parseFloat($("p").css("font-size"));
+            $("p").css("font-size",(1.2 * grootte)+ "px");
+            
+        });
+        
+    });
+</script>
+
+<body>
+    <h1>Hoofdstuk 6 Werken met CSS</h1>
+    <button id="kleiner">Kleiner</button>
+    <button id="groter">Kleiner</button>
+    
+    <div>
+    <p>
+    LOREM ipsum doler sit amet, consectetur adipiscing elit. Integer dolor.   
+    </p>
+    </div>
+
+
+</body>
+
+</html>
