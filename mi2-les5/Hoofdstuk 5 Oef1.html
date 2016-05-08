@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Walid HAOURIQUI</title>
+
+
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.1.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+
+
+
+</head>
+<style>
+    body {
+        background-color: burlywood;
+    }
+    
+    .vet {
+        font-size: 2em;
+        font-weight: bold;
+    }
+</style>
+<script>
+    var Plaats = new Array("Brussel", "Antwerpen", "Henegouwen", "Limburg", "Namen");
+    $(document).ready(function () {
+
+
+        for (var i = 0; i < Plaats.length; i++) {
+
+            $("div").append('<ul>' + i + ": " + Plaats[i] + '</ul>')
+
+        }
+        $("ul").click(function () {
+
+            $(this).toggleClass("vet");
+
+
+
+        })
+    })
+</script>
+
+<body>
+    <h1>Hoofdstuk 5 oefening 1</h1>
+    <div>
+    </div>
+
+</body>
+
+</html>
