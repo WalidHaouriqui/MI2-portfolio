@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Walid HAOURIQUI</title>
+
+
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.1.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.1.min.js"></script>
+
+
+
+</head>
+
+<script>
+"use strict";
+/*global $ */
+	
+    //FOTO'S UIT EEN SITE DECLAREREN
+    var fotoArray = ["f5133cb1705d259b32e084b0c1e531e5_large.jpg"
+                     ,"4572cf86008755df12e3f13e8caf4f0a_large.jpg"
+                     ,"a9c5493274fbef70b51289dd47cc86b3_large.jpg"
+                     ,"95f700eb7d067cf3090de50535556554_large.jpg"
+                     ,"bfa91d008c03e910c864484c14412d50_large.jpg"
+                     ,"6a828e18be6a567567f304350ee14cf7_large.jpg"];
+
+	var urlPrefix = "http://img.mobypicture.com/";
+
+
+
+    
+	$(document).ready(function () 
+    {
+        var i, foto, bron, thumb;
+        
+		$("#galerij").html("<div id='frame'><img /><\/div>" + "<ul class='fotolijst'><\/ul>");
+		$("#frame img").attr("src", urlPrefix + fotoArray[0]); // src = "http://img.mobypicture.com/f5133cb1705d259b32e084b0c1e531e5_large.jpg"
+		
+		for (i = 0; i < fotoArray.length; i += 1) 
+        {
+			foto     = fotoArray[i];
+			bron     = urlPrefix + foto;
+			thumb    = bron.replace("_large.jpg", "_square.jpg");
+			
+			$(".fotolijst").append("<li><a href='#' data-rel='" + i + "'><img src='" + thumb + "'><\/a><\/li>");
+        }
+		
+        
+		function soFadeImg() 
+        {
+			
+			var index   = parseInt($(this).attr("data-rel"), 10),
+                bron    = urlPrefix + fotoArray[index];
+            
+			$("#frame").css("background-image", "url(" + $("#frame img").attr("src") + ")");
+			$("#frame").html("<img style='display:none;'>");
+			$("#frame img").attr("src", bron);
+			$("#frame img").fadeIn("slow");
+		}
+		
+		$(".fotolijst a").on("click", soFadeImg);
+		$(".fotolijst a").on("mouseenter", soFadeImg);
+					
+	});
+</script>
+    <style>
+        
+body{
+		background: #666;
+		color:black;
+		text-align:center;
+}
+       
+ul.fotolijst{
+		list-style-type : none;
+		padding:0;
+		margin:0;
+		text-align:center;
+		
+	}
+ul.fotolijst li{
+		float:left;
+		width:100px;
+		margin: 0px 1px 0px 1px;
+	}
+ul.fotolijst li img{
+
+		
+		border: 2px solid #777;
+		padding: 0px;
+		border-radius: 5px;
+		
+	}
+#galerij{
+		text-align:center;
+	}
+#frame{
+		width: 939px;
+		height: 625px;
+		margin: 10px 0px 10px 0px;
+		border: 3px solid #ccc;
+		overflow:hidden;
+		border-radius: 5px;
+}
+</style>
+
+<body>
+    <h1>Hoofdstuk 6 Animatie</h1>
+<div>
+       <div id="galerij">
+    </div>
+  
+</div>
+
+
+</body>
+
+</html>
